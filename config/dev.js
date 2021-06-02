@@ -5,5 +5,10 @@ module.exports = {
   mongoURI:
     "mongodb+srv://mohammad-75:ZoIuMpkaDUTpKfRF@cluster0.zp1rc.mongodb.net/advance-nodejs?retryWrites=true&w=majority",
   cookieKey: "123123123",
-  redisUrl: "redis://127.0.0.1:6379"
+  redisUrl: "redis://127.0.0.1:6379",
+
+  // these key are related to upload image for AWS
+
+  accessKeyId: "***************",
+  secretAccessKey: "**********************"
 };

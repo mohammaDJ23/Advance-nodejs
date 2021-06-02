@@ -15,15 +15,18 @@ module.exports = app => {
   });
 
   app.get("/api/blogs", requireLogin, async (req, res) => {
-    const blogs = await Blog.find({ _user: req.user.id }).catche({ key: req.user.id });
+    const blogs = await Blog.find({ _user: req.user.id }).catche({
+      key: req.user.id
+    });
 
     res.send(blogs);
   });
 
   app.post("/api/blogs", requireLogin, clearCachMid, async (req, res) => {
-    const { title, content } = req.body;
+    const { title, content, imageUrl } = req.body;
 
     const blog = new Blog({
+      imageUrl,
       title,
       content,
       _user: req.user.id
